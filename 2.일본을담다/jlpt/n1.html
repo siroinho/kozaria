@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어공부 KOJARIA</title>
+    <link rel="stylesheet" href="./n1.css">
+
+<body class="jp">
+
+    <header>
+        <div class="container">
+            <h1>
+                <button><a href="../index.html">KOJARIA</a></button>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./n1.html"><button>JLPT N1</button></a>
+                    </li>
+                    <li>
+                        <a href="./n2.html"><button>JLPT N2</button></a>
+                    </li>
+                    <li>
+                        <a href="./n3.html"><button>JLPT N3</button></a>
+                    </li>
+                    <li>
+                        <a href="./n4.html"><button>JLPT N4</button></a>
+                    </li>
+                    <li>
+                        <a href="./n5.html"><button>JLPT N5</button></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="outer">
+
+        <main id="main_a" class="wrap inner">
+            <div class="title-header">
+                <div class="title-heading">
+                    <span class="aside">n1 한자읽기 문제</span>
+                </div>
+                <div class="category">
+                    <select class="question-number-a" onchange="changeSelect(this)"></select>
+                    <div class="category-a">
+                        <p class="total-question" id="totalQuestionA">총문제 문제</p>
+                        <p class="remaining-question" id="remainingQuestionA">남은문제 문제</p>
+                        <button class="show-meaning-button" onclick="showMeaning('A')">뜻 보기</button>
+                        <button class="hide-meaning-button" onclick="hideMeaning('A')">뜻 숨기기</button>
+                        <p class="korean-meaning"></p>
+                        <p class="question"></p>
+                        <ul class="options">
+                            <!-- 선택지가 표시됩니다. -->
+                        </ul>
+
+                        <div class="slide_btn_box">
+                            <button type="button" class="slide_btn_prev">이전문제</button>
+                            <button type="button" class="result-btn-a" onclick="showTotalResulta()">결과보기</button>
+                            <button type="button" class="slide_btn_next">다음문제</button>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="goBackBtn_a" onclick="goBackToQuiza()"
+                            style="display: none;">문제풀기</button>
+                        <button type="button" class="resetBtn_a" onclick="resetAnswersa()"
+                            style="display: none;">답안초기화</button>
+                    </div>
+
+                    <div id="result-container_a">
+                        <div id="user-answer_a" class="result-item scroll-box">
+                            <p></p>
+                        </div>
+                        <div id="correct-answer_a" class="result-item">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main id="main_b" class="wrap inner">
+            <div class="title-header">
+                <div class="title-heading">
+                    <span class="aside">n1 문맥규정 문제</span>
+                </div>
+                <div class="category">
+                    <select class="question-number-b" onchange="changeSelect(this)"></select>
+                    <div class="category-b">
+                        <p class="total-question" id="totalQuestionB">총문제 문제</p>
+                        <p class="remaining-question" id="remainingQuestionB">남은문제 문제</p>
+                        <button class="show-meaning-button" onclick="showMeaning('B')">뜻 보기</button>
+                        <button class="hide-meaning-button" onclick="hideMeaning('B')">뜻 숨기기</button>
+                        <p class="korean-meaningb"></p>
+                        <p class="questionb"></p>
+                        <ul class="optionsb">
+                            <!-- 선택지가 표시됩니다. -->
+                        </ul>
+                        <div class="slide_btn_box">
+                            <button type="button" class="slide_btn_prev">이전문제</button>
+                            <button type="button" class="result-btn-b" onclick="showTotalResultb()">결과보기</button>
+                            <button type="button" class="slide_btn_next">다음문제</button>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="goBackBtn_b" onclick="goBackToQuizb()"
+                            style="display: none;">문제풀기</button>
+                        <button type="button" class="resetBtn_b" onclick="resetAnswersb()"
+                            style="display: none;">답안초기화</button>
+                    </div>
+
+                    <div id="result-container_b">
+                        <div id="user-answer_b" class="result-item scroll-box">
+                            <p></p>
+                        </div>
+                        <div id="correct-answer_b" class="result-item">
+                            <p></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+        <main id="main_c" class="wrap inner">
+            <div class="title-header">
+                <div class="title-heading">
+                    <span class="aside">n1 유의어 문제</span>
+                </div>
+                <div class="category">
+                    <select class="question-number-c" onchange="changeSelect(this)"></select>
+                    <div class="category-c">
+                        <p class="total-question" id="totalQuestionC">총문제 문제</p>
+                        <p class="remaining-question" id="remainingQuestionC">남은문제 문제</p>
+                        <button class="show-meaning-button" onclick="showMeaning('C')">뜻 보기</button>
+                        <button class="hide-meaning-button" onclick="hideMeaning('C')">뜻 숨기기</button>
+                        <p class="korean-meaningc"></p>
+                        <p class="questionc"></p>
+                        <ul class="optionsc">
+                            <!-- 선택지가 표시됩니다. -->
+                        </ul>
+                        <div class="slide_btn_box">
+                            <button type="button" class="slide_btn_prev">이전문제</button>
+                            <button type="button" class="result-btn-c" onclick="showTotalResultc()">결과보기</button>
+                            <button type="button" class="slide_btn_next">다음문제</button>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="goBackBtn_c" onclick="goBackToQuizc()"
+                            style="display: none;">문제풀기</button>
+                        <button type="button" class="resetBtn_c" onclick="resetAnswersc()"
+                            style="display: none;">답안초기화</button>
+                    </div>
+
+                    <div id="result-container_c">
+                        <div id="user-answer_c" class="result-item scroll-box">
+                            <p></p>
+                        </div>
+                        <div id="correct-answer_c" class="result-item">
+                            <p></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+        <main id="main_d" class="wrap inner">
+            <div class="title-header">
+                <div class="title-heading">
+                    <span class="aside">n1 용법 문제</span>
+                </div>
+                <div class="category">
+                    <select class="question-number-d" onchange="changeSelect(this)"></select>
+                    <div class="category-d">
+                        <p class="total-question" id="totalQuestionD">총문제 문제</p>
+                        <p class="remaining-question" id="remainingQuestionD">남은문제 문제</p>
+                        <button class="show-meaning-button" onclick="showMeaning('D')">뜻 보기</button>
+                        <button class="hide-meaning-button" onclick="hideMeaning('D')">뜻 숨기기</button>
+                        <p class="korean-meaningd"></p>
+                        <p class="questiond"></p>
+                        <ul class="optionsd">
+                            <!-- 선택지가 표시됩니다. -->
+                        </ul>
+                        <div class="slide_btn_box">
+                            <button type="button" class="slide_btn_prev">이전문제</button>
+                            <button type="button" class="result-btn-d" onclick="showTotalResultd()">결과보기</button>
+                            <button type="button" class="slide_btn_next">다음문제</button>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="goBackBtn_d" onclick="goBackToQuizd()"
+                            style="display: none;">문제풀기</button>
+                        <button type="button" class="resetBtn_d" onclick="resetAnswersd()"
+                            style="display: none;">답안초기화</button>
+                    </div>
+
+                    <div id="result-container_d">
+                        <div id="user-answer_d" class="result-item scroll-box">
+                            <p></p>
+                        </div>
+                        <div id="correct-answer_d" class="result-item">
+                            <p></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+
+        <div class="button-list">
+            <button class="button-left">←</button>
+            <button class="button-right">→</button>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+
+        const kanjiQuizDataA = [
+            { question: '洗浄', koreanMeaning: '세척', options: ['せんぞう', 'せんすい', 'せんたく', 'せんじょう'], correctAnswer: 'せんじょう' },
+            { question: '侵略', koreanMeaning: '침략', options: ['こうりゃく', 'しんりゃく', 'しんぱい', 'こうげき'], correctAnswer: 'しんりゃく' },
+            { question: '松', koreanMeaning: '소나무', options: ['まつ', 'すぎ', 'うめ', 'さくら'], correctAnswer: 'まつ' },
+            { question: '漠然', koreanMeaning: '백랑', options: ['しぜん', 'ばくぜん', 'もんぜん', 'たいぜん'], correctAnswer: 'ばくぜん' },
+            { question: '沢山', koreanMeaning: '많이', options: ['いくつか', 'たくさん', 'ふくすう', 'じゅうぶん'], correctAnswer: 'たくさん' },
+            { question: '起伏', koreanMeaning: '기복', options: ['きじょう', 'きふく', 'きか', 'きもん'], correctAnswer: 'きふく' },
+            { question: '利潤', koreanMeaning: '이윤', options: ['りとう', 'りこ', 'りえき', 'りじゅん'], correctAnswer: 'りじゅん' },
+            { question: '洞察力', koreanMeaning: '통찰력', options: ['こうどうりょく', 'どうさつりょく', 'はんだんりょく', 'こうさつりょく'], correctAnswer: 'どうさつりょく' },
+            { question: '担架', koreanMeaning: '들것', options: ['たんす', 'たんか', 'たんでん', 'たんぽ'], correctAnswer: 'たんか' },
+            { question: '朗読', koreanMeaning: '낭독', options: ['くんよみ', 'ちくどく', 'おんどく', 'ろうどく'], correctAnswer: 'ろうどく' },
+            { question: '収穫', koreanMeaning: '수확', options: ['しゅうしゅう', 'しゅうかく', 'しゅうばつ', 'しゅうかい'], correctAnswer: 'しゅうかく' },
+            { question: '梅雨', koreanMeaning: '장마', options: ['うめあめ', 'さみだれ', 'つゆ', 'らいう'], correctAnswer: 'つゆ' },
+            { question: '細胞', koreanMeaning: '세포', options: ['さいぼう', 'しぼう', 'そっちゅう', 'こうそく'], correctAnswer: 'さいぼう' },
+            { question: '豆腐', koreanMeaning: '두부', options: ['とうにゅう', 'とうふ', 'まめもち', 'まめもやし'], correctAnswer: 'とうふ' },
+            { question: '失脚', koreanMeaning: '실각', options: ['しつれん', 'しったい', 'しっぱい', 'しっきゃく'], correctAnswer: 'しっきゃく' },
+            { question: '肘', koreanMeaning: '팔꿈치', options: ['ひざ', 'ひじ', 'ゆび', 'かざ'], correctAnswer: 'ひじ' },
+            { question: '軍隊', koreanMeaning: '군대', options: ['ぐんみん', 'ぐんぴょう', 'ぐんりつ', 'ぐんたい'], correctAnswer: 'ぐんたい' },
+            { question: '消耗', koreanMeaning: '소모', options: ['しょうか', 'しょうもう', 'しょうたい', 'しょうれい'], correctAnswer: 'しょうもう' },
+            { question: '圧迫', koreanMeaning: '압박', options: ['あつはく', 'あっはく', 'あつぱく', 'あっぱく'], correctAnswer: 'あっぱく' },
+            { question: '意欲', koreanMeaning: '의욕', options: ['いしょく', 'いよく', 'いゆく', 'いおく'], correctAnswer: 'いよく' },
+            { question: '遺跡', koreanMeaning: '유적', options: ['いあと', 'いせき', 'けんあと', 'けんせき'], correctAnswer: 'いせき' },
+            { question: '運送', koreanMeaning: '운송', options: ['うんしょう', 'うんそう', 'うんじょう', 'うんぞう'], correctAnswer: 'うんそう' },
+            { question: '閲覧', koreanMeaning: '열람', options: ['ぜいらん', 'らんし ', 'えっかん ', 'えつらん'], correctAnswer: 'えつらん' },
+            { question: '沿岸', koreanMeaning: '연안', options: ['えんたん ', 'せんがん', 'えんがん ', 'せんたん'], correctAnswer: 'えんがん ' },
+            { question: '応募', koreanMeaning: '응모', options: ['おおぼう', 'おぼう ', 'おうぼ ', 'おうぼう'], correctAnswer: 'おうぼ ' },
+            { question: '怪獣', koreanMeaning: '괴수', options: ['かいじゅう', 'けいしゅう ', 'けいちょう ', 'へいじゅう '], correctAnswer: 'かいじゅう' },
+            { question: '寒気', koreanMeaning: '한기', options: ['かぜ', 'かんき', 'さむき', 'さむけ'], correctAnswer: 'さむけ' },
+            { question: '勘弁', koreanMeaning: '용서', options: ['しんべん ', 'かんべん', 'けんべん', 'りきへん'], correctAnswer: 'かんべん' },
+            { question: '監視', koreanMeaning: '감시', options: ['とくし', 'かんし', 'かんけん ', 'とっけん'], correctAnswer: 'かんし' },
+            { question: '簡潔', koreanMeaning: '간결', options: ['かんぱつ ', 'かんけつ ', 'かんせつ', 'かんせい '], correctAnswer: 'かんけつ ' },
+            { question: '間柄', koreanMeaning: '사이', options: ['あいだから', 'かんがら', 'かんぺい', 'あいだがら'], correctAnswer: 'あいだがら' },
+            { question: '技能', koreanMeaning: '기능', options: ['じゅつのう', 'ぎのう', 'しのう', 'じのう'], correctAnswer: 'ぎのう' },
+            { question: '宮殿', koreanMeaning: '궁전', options: ['きゅうてん', 'きゅうでん', 'かんてん', 'かんでん'], correctAnswer: 'きゅうでん' },
+            { question: '急騰', koreanMeaning: '급등', options: ['きゅうきょ', 'きゅうとう', 'きゅうきょう', 'きゅうしょう'], correctAnswer: 'きゅうとう' },
+            { question: '業者', koreanMeaning: '업자', options: ['ぎょうさ', 'ぎょうもの', 'ぎょうしゃ', 'ぼくしゃ'], correctAnswer: 'ぎょうしゃ' },
+            { question: '経験', koreanMeaning: '경험', options: ['けいけん', 'きょうけん', 'きょうけい', 'けっけん'], correctAnswer: 'けいけん' },
+            { question: '経費', koreanMeaning: '경비', options: ['きょうひ', 'けっぴ', 'けひ', 'けいひ'], correctAnswer: 'けいひ' },
+            { question: '軽率', koreanMeaning: '경솔', options: ['けいそつ', 'けっそつ', 'けいりつ', 'かるりつ'], correctAnswer: 'けいそつ' },
+            { question: '厳密', koreanMeaning: '엄밀', options: ['げんみつ  ', 'しゅひ ', 'けんみつ', 'けんぴ '], correctAnswer: 'げんみつ  ' },
+            { question: '古代', koreanMeaning: '고대', options: ['ふるたい', 'こたい', 'ふるだい', 'こだい'], correctAnswer: 'こだい' },
+            { question: '誇張', koreanMeaning: '과장', options: ['ほうちょう ', 'ほちょう ', 'こうちょう ', 'こちょう'], correctAnswer: 'こちょう' },
+            { question: '護衛', koreanMeaning: '호위', options: ['ぼえい', 'ごえい', 'ごえい ', 'しゅぎょう '], correctAnswer: 'ごえい ' },
+            { question: '行政', koreanMeaning: '행정', options: ['ぎょうせい', 'こうせい', 'ぎょうぜい', 'きょうせい'], correctAnswer: 'ぎょうせい' },
+            { question: '購買', koreanMeaning: '구매', options: ['こうかい', 'ばいばい', 'こはい', 'こうばい'], correctAnswer: 'こうばい' },
+            { question: '昆虫', koreanMeaning: '곤충', options: ['ひちゅう', 'ひむし', 'こんちゅう', 'こんむし'], correctAnswer: 'こんちゅう' },
+            { question: '詐欺', koreanMeaning: '사기', options: ['さっけん', 'さっかん', 'さわぎ', 'さぎ'], correctAnswer: 'さぎ' },
+            { question: '詐欺', koreanMeaning: '사기', options: ['さっき', 'さっかん', 'さわぎ', 'さぎ'], correctAnswer: 'さぎ' },
+            { question: '再建', koreanMeaning: '재건', options: ['さいげん', 'ふたたて', 'ふただて', 'さいけん'], correctAnswer: 'さいけん' },
+            { question: '採用', koreanMeaning: '채용', options: ['しよう', 'せつよう', 'しゅよう', 'さいよう'], correctAnswer: 'さいよう' },
+            { question: '削減', koreanMeaning: '삭감', options: ['しゃくめつ', 'しゃくげん', 'さくめつ', 'さくげん'], correctAnswer: 'さくげん' },
+            { question: '削減', koreanMeaning: '삭감', options: ['さっきょ', 'さくげん ', 'さくじょ ', 'しょうげん '], correctAnswer: 'さくげん ' },
+            { question: '施設', koreanMeaning: '시설', options: ['しせつ', 'しやく', 'せせつ ', 'せいせつ '], correctAnswer: 'しせつ' },
+            { question: '脂肪', koreanMeaning: '지방', options: ['しゅほう', 'しぼう ', 'しほう ', 'しゅぼ'], correctAnswer: 'しぼう ' },
+            { question: '手当', koreanMeaning: '수당', options: ['てとう', 'てあて', 'しゅとう', 'しゅあて'], correctAnswer: 'てあて' },
+            { question: '従業', koreanMeaning: '종업', options: ['じゅうぎょう', 'じゅうぎょ', 'じゅぎょう', 'じゅぎょ'], correctAnswer: 'じゅうぎょう' },
+            { question: '重工業', koreanMeaning: '중공업', options: ['ちょうこうぎょう', 'ちょうくぎょう', 'じゅうくぎょう', 'じゅうこうぎょう'], correctAnswer: 'じゅうこうぎょう' },
+            { question: '承諾', koreanMeaning: '승낙', options: ['しょうだく', 'しょうじゃく', 'しょうたく  ', 'しょじゃく'], correctAnswer: 'しょうだく' },
+            { question: '昇進', koreanMeaning: '승진', options: ['しゅっしん', 'しょうしゅう', 'しょうしん', 'しゅうしん'], correctAnswer: 'しょうしん' },
+            { question: '象徴', koreanMeaning: '상징', options: ['しょうみょう', 'しょうちょう', 'ぞうちょう ', 'ぞうみょう '], correctAnswer: 'しょうちょう' },
+            { question: '上昇', koreanMeaning: '상승', options: ['じょうそう', 'じょうしゃ', 'じょうしょう', 'じょうお'], correctAnswer: 'じょうしょう' },
+            { question: '人生', koreanMeaning: '인생', options: ['にんせい', 'にんしょう', 'じんせい', 'じんしょう'], correctAnswer: 'じんせい' },
+            { question: '推測', koreanMeaning: '추측', options: ['すいそく', 'すいそっく', 'たいそく', 'たいそっく'], correctAnswer: 'すいそく' },
+            { question: '政権', koreanMeaning: '정권', options: ['せけん', 'せいけん', 'そけん', 'そんけん'], correctAnswer: 'せいけん' },
+            { question: '誠実', koreanMeaning: '성실', options: ['せいじつ', 'せっじつ', 'せじっつ', 'しょうじつ'], correctAnswer: 'せいじつ' },
+            { question: '責任転嫁', koreanMeaning: '책임 전가', options: ['せきにんでんけん', 'せきにんてんかん', 'せきにんてんか', 'せきにんてんけん'], correctAnswer: 'せきにんてんか' },
+            { question: '選挙', koreanMeaning: '선거', options: ['せっけん', 'せっきょ', 'せんけん', 'せんきょ'], correctAnswer: 'せんきょ' },
+            { question: '善し悪し', koreanMeaning: '좋고 나쁨', options: ['よしあくし', 'よしあし', 'ぜんあくし', 'ぜんあし'], correctAnswer: 'よしあし' },
+            { question: '素朴', koreanMeaning: '소박', options: ['そばく', 'そぼく', 'すばく', 'すぼく'], correctAnswer: 'そぼく' },
+            { question: '捜索', koreanMeaning: '수색', options: ['そうさく', 'そっさく ', 'そういん ', 'そさく'], correctAnswer: 'そうさく' },
+            { question: '側面', koreanMeaning: '측면', options: ['はんめん', 'いちめん', 'がわめん', 'そくめん'], correctAnswer: 'そくめん' },
+            { question: '束縛', koreanMeaning: '속박', options: ['そくばく', 'そくじゅう', 'そっぱく', 'せっぱく'], correctAnswer: 'そくばく' },
+            { question: '怠慢', koreanMeaning: '태만', options: ['だいかん', 'たいまん', 'だいまん', 'たいかん'], correctAnswer: 'たいまん' },
+            { question: '態勢', koreanMeaning: '태세', options: ['のうせい', 'たいぜい', 'たいせい ', 'のうぜい'], correctAnswer: 'たいせい ' },
+            { question: '長年', koreanMeaning: '오랜 세월', options: ['ながとし', 'ちょうねん', 'ながねん', 'ちょうとし'], correctAnswer: 'ながねん' },
+            { question: '低所得', koreanMeaning: '저소득', options: ['ていしょとく', 'ていじょとく', 'ていしょどく', 'ていじょど'], correctAnswer: 'ていしょとく' },
+            { question: '提供', koreanMeaning: '제공', options: ['ぜきょう', 'ていとも', 'ていきょう', 'ぜども'], correctAnswer: 'ていきょう' },
+            { question: '同僚', koreanMeaning: '동료', options: ['どうちょう', 'どうしょう', 'どうみょう', 'どうりょう'], correctAnswer: 'どうりょう' },
+            { question: '独裁', koreanMeaning: '독재', options: ['どくさい', 'とくさい', 'どくせい', 'とくせい'], correctAnswer: 'どくさい' },
+            { question: '念願', koreanMeaning: '염원', options: ['ねんがん', 'ねんかん', 'こんがん', 'こんかん'], correctAnswer: 'ねんがん' },
+            { question: '燃料', koreanMeaning: '연료', options: ['えんりょう', 'れんりょう', 'ねんりょう', 'ぜんりょう'], correctAnswer: 'れんりょう' },
+            { question: '廃止', koreanMeaning: '폐지', options: ['てっし', 'はっし', 'ていし', 'はいし'], correctAnswer: 'はいし' },
+            { question: '発掘', koreanMeaning: '발굴', options: ['はっほり', 'はつほり', 'はっくつ', 'はつくつ'], correctAnswer: 'はっくつ' },
+            { question: '発言', koreanMeaning: '발언', options: ['はっけん', 'はつげん', 'はっぴょう', 'ぱつごん'], correctAnswer: 'はつげん' },
+            { question: '繁殖', koreanMeaning: '번식', options: ['はんしょく', 'きんしょく', 'はんすく', 'きんすく'], correctAnswer: 'はんしょく' },
+            { question: '不景気', koreanMeaning: '불경기', options: ['ふけいき', 'ふけき', 'ふきょうき', 'ぶけいき'], correctAnswer: 'ふけいき' },
+            { question: '不景気', koreanMeaning: '불경기', options: ['ふていき', 'ふけいき', 'ふしょうき', 'ふきょうき'], correctAnswer: 'ふけいき' },
+            { question: '崩壊', koreanMeaning: '붕괴', options: ['さいかい', 'さいけい', 'ほうかい', 'ほうけん'], correctAnswer: 'ほうかい' },
+            { question: '方針', koreanMeaning: '방침', options: ['ほうしん', 'ほうこう', 'ほうぼう', 'ほうじゅう'], correctAnswer: 'ほうしん' },
+            { question: '未熟', koreanMeaning: '미숙', options: ['みまん', 'みあつ', 'みじょう', 'みじゅく'], correctAnswer: 'みじゅく' },
+            { question: '霧', koreanMeaning: '안개', options: ['かすみ', 'つゆ', 'ゆき', 'きり'], correctAnswer: 'きり' },
+            { question: '容疑', koreanMeaning: '용의', options: ['ようぎしゃ', 'ようじもの', 'ようじしゃ', 'ようぎもの'], correctAnswer: 'ようぎしゃ' },
+            { question: '書道', koreanMeaning: '서예', options: ['しょうどう', 'しょみち ', 'かくみち', 'しょどう'], correctAnswer: 'しょどう' },
+            { question: '毛筆', koreanMeaning: '모필', options: ['けふで', 'もうふで', 'もうひつ ', 'けひつ'], correctAnswer: 'もうひつ ' },
+            { question: '墨', koreanMeaning: '먹물', options: ['ぼく', 'くろ ', 'すみ', 'ほく '], correctAnswer: 'すみ' },
+            { question: '文字', koreanMeaning: '문자', options: ['もじ ', 'ぶんじ ', 'ふみじ ', 'もんじ'], correctAnswer: 'もじ ' },
+            { question: '芸術', koreanMeaning: '예술', options: ['げいじゅつ ', 'げいじゅうつ ', 'げじゅつ ', 'げじゅうつ'], correctAnswer: 'げいじゅつ' },
+            { question: '法律', koreanMeaning: '법률', options: ['ほうりつ', 'ほうりゅう', 'ふうりつ', 'ふうりゅう'], correctAnswer: 'ほうりつ ' },
+            { question: '雇用', koreanMeaning: '고용', options: ['やとよう', 'こよう', 'こよん', 'やとよん'], correctAnswer: 'こよう' },
+            { question: '差別', koreanMeaning: '차별', options: ['ちゃべつ', 'さわか', 'ちゃわか', 'さべつ'], correctAnswer: 'さべつ' },
+            { question: '解消', koreanMeaning: '해소', options: ['がいしゅう', 'かいしゅう', 'がいしょう', 'かいしょう'], correctAnswer: 'かいしょう ' },
+            { question: '施行', koreanMeaning: '시행', options: ['しこう', 'じぎょう', 'じこう', 'しぎょう'], correctAnswer: 'しこう ' },
+            { question: '定年', koreanMeaning: '정년', options: ['じょうねん', 'ていねん', 'てんねん', 'てんねい'], correctAnswer: 'ていねん' },
+            { question: '意思', koreanMeaning: '의사', options: ['おす', 'いす', 'いし', 'いじ'], correctAnswer: 'いし' },
+            { question: '退職', koreanMeaning: '퇴직', options: ['といしょく', 'といしゃく', 'たいしゃく', 'たいしょく'], correctAnswer: 'たいしょく' },
+            { question: '制度', koreanMeaning: '제도', options: ['じいど', 'じどう', 'せどう', 'せいど'], correctAnswer: 'せいど' },
+            { question: '遊覧', koreanMeaning: '유람', options: ['ゆうれん', 'ゆらん', 'ゆうらん', 'ゆれん'], correctAnswer: 'ゆうらん' },
+            { question: '保養', koreanMeaning: '보양', options: ['ほよう', 'ほうよう', 'ほうよ', 'ぼよう'], correctAnswer: 'ほよう' },
+            { question: '余暇', koreanMeaning: '여가', options: ['あひま', 'あか', 'よひま', 'よか'], correctAnswer: 'よか' },
+            { question: '旅', koreanMeaning: '여행', options: ['だび', 'りょう', 'たび', 'りょ'], correctAnswer: 'たび ' },
+            { question: '定着', koreanMeaning: '정착', options: ['ていちゃく', 'ていき', 'じょうちゃく', 'じょうき'], correctAnswer: 'ていちゃく' },
+            { question: '余年', koreanMeaning: '남은 년', options: ['ようねん', 'ようとし', 'よとし', 'よねん'], correctAnswer: 'よねん' },
+            { question: '京都', koreanMeaning: '교토', options: ['きょうと', 'きょとう', 'きょうど', 'きょうとう'], correctAnswer: 'きょうと' },
+            { question: '元来', koreanMeaning: '원래', options: ['もとき', 'げんき', 'がんらい', 'げんらい'], correctAnswer: 'がんらい' },
+            { question: '箸', koreanMeaning: '젓가락', options: ['はし', 'はじ', 'ばし', 'はしい'], correctAnswer: 'はし' },
+            { question: '神', koreanMeaning: '신', options: ['かみ', 'じん', 'しん', 'がみ'], correctAnswer: 'かみ ' },
+            { question: '捧', koreanMeaning: '봉', options: ['さな', 'さか', 'さまた', 'ささ'], correctAnswer: 'ささ ' },
+            { question: '神聖', koreanMeaning: '신성', options: ['しんせい', 'じんせ', 'かみせい', 'じんせい'], correctAnswer: 'しんせい  ' },
+            { question: '端午', koreanMeaning: '단오', options: ['だんご', 'たんご', 'たんぎゅう', 'だんぎゅう'], correctAnswer: 'たんご' },
+            { question: '節句', koreanMeaning: '명절', options: ['せっく', 'ふしぐ', 'せつく', 'ふしく'], correctAnswer: 'せっく' },
+            { question: '成長', koreanMeaning: '성장', options: ['せちょう', 'せいちょ', 'せいちょう', 'せちょ'], correctAnswer: 'せいちょう' },
+            { question: '渦', koreanMeaning: '', options: ['せ', 'うず', 'たき', 'みぞ'], correctAnswer: '' },
+            { question: '循環', koreanMeaning: '', options: ['じゅんかん', 'しゅんかん', 'どんかん', 'とんかん'], correctAnswer: '' },
+            { question: '伯父', koreanMeaning: '', options: ['おば', 'おじ', 'そぼ', 'そふ'], correctAnswer: '' },
+            { question: '負債', koreanMeaning: '', options: ['ふまん', 'ふさい', 'ふかい', 'ふてき'], correctAnswer: '' },
+            { question: '世俗的', koreanMeaning: '', options: ['よぞくてき', 'よそんてき', 'せいぞんてき', 'せぞくてき'], correctAnswer: '' },
+            { question: '滋養', koreanMeaning: '', options: ['じよう', 'たんよう', 'そよう', 'えいよう'], correctAnswer: '' },
+            { question: '老朽化', koreanMeaning: '', options: ['ろうちくか', 'ろうきゅうか', 'ろうくうか', 'ろうろうか'], correctAnswer: '' },
+            { question: '均衡', koreanMeaning: '', options: ['きんこう', 'きんとう', 'きんてい', 'きんれい'], correctAnswer: '' },
+            { question: '素朴', koreanMeaning: '', options: ['そが', 'そがい', 'そぼ', 'そぼく'], correctAnswer: '' },
+            { question: '土俵', koreanMeaning: '', options: ['たわら', 'どひょう', 'すもう', 'どぐう'], correctAnswer: '' },
+            { question: '魅力', koreanMeaning: '', options: ['まりょく', 'びりょく', 'みりょく', 'きりょく'], correctAnswer: '' },
+            { question: '桃', koreanMeaning: '', options: ['うめ', 'もも', 'さくら', 'すぎ'], correctAnswer: '' },
+            { question: '膨張', koreanMeaning: '', options: ['ぼうちょう', 'こちょう', 'かくちょう', 'いんちょう'], correctAnswer: '' },
+            { question: '随時', koreanMeaning: '', options: ['えんどき', 'かくどき', 'かくじ', 'ずいじ'], correctAnswer: '' },
+            { question: '椅子', koreanMeaning: '', options: ['なるこ', 'さいし', 'なす', 'いす'], correctAnswer: '' },
+            { question: '穂', koreanMeaning: '', options: ['いね', 'いな', 'ほ', 'ぼ'], correctAnswer: '' },
+            { question: '欠陥', koreanMeaning: '', options: ['けつぼう', 'けつれつ', 'けっかん', 'けっとう'], correctAnswer: '' },
+            { question: '食糧', koreanMeaning: '', options: ['しょくちく', 'しょくりょう', 'しょくざい', 'しょくもん'], correctAnswer: '' },
+            { question: '肺', koreanMeaning: '', options: ['はい', 'のう', 'わき', 'どう'], correctAnswer: '' },
+            { question: '陶芸', koreanMeaning: '', options: ['えつげい', 'とつげい', 'えんげい', 'とうげい'], correctAnswer: '' },
+
+        ];
+
+        const kanjiQuizDataB = [
+            { question: 'しゅとく', koreanMeaning: '획득', options: ['取得', '拾得', '取徳', '修行'], correctAnswer: '取得' },
+            { question: 'じゅく', koreanMeaning: '학원', options: ['熱', '熟', '熟', '塾'], correctAnswer: '塾' },
+            { question: 'ますい', koreanMeaning: '마취', options: ['泥酔', '麻酔', '摩耗', '摩擦'], correctAnswer: '麻酔' },
+            { question: 'ふきゅう', koreanMeaning: '보급', options: ['風習', '普及', '復旧', '紛糾'], correctAnswer: '普及' },
+            { question: 'けんお', koreanMeaning: '혐오', options: ['拒否', '嫌悪', '避難', '否定'], correctAnswer: '嫌悪' },
+            { question: 'しじ', koreanMeaning: '지시', options: ['実施', '恣意', '指示', '自信'], correctAnswer: '指示' },
+            { question: 'きょうきゅう', koreanMeaning: '공급', options: ['満足', '供給', '提供', '経験'], correctAnswer: '供給' },
+            { question: 'そうごん', koreanMeaning: '장엄, 웅장', options: ['荘厳', '総娯', '総厳', '僧厳'], correctAnswer: '荘厳' },
+            { question: 'こうにゅう', koreanMeaning: '구입', options: ['構入', '購入', '貯入', '顧入'], correctAnswer: '購入' },
+            { question: 'さかん', koreanMeaning: '번창, 활발', options: ['盤ん', '盛ん', '監ん', '盗ん'], correctAnswer: '盛ん' },
+            { question: 'いっかん', koreanMeaning: '일관', options: ['一貫', '一律', '一環', '一括'], correctAnswer: '一貫' },
+            { question: 'いっきょ', koreanMeaning: '일거', options: ['一括', '一挙', '一斉', '一切'], correctAnswer: '一挙' },
+            { question: 'いっさい', koreanMeaning: '일체', options: ['一向', '一斉', '一切', '一再'], correctAnswer: '一切' },
+            { question: 'たんいつ', koreanMeaning: '단일', options: ['画一', '単一', '唯一', '均一'], correctAnswer: '単一' },
+            { question: 'あんい', koreanMeaning: '안이', options: ['安直', '容易', '安易', '簡易'], correctAnswer: '安易' },
+            { question: 'こうあん', koreanMeaning: '고안', options: ['公案', '考案', '思案', '提案'], correctAnswer: '考案' },
+            { question: 'ようい', koreanMeaning: '용이', options: ['容易', '安易', '用意', '容意'], correctAnswer: '容易' },
+            { question: 'かくいつ', koreanMeaning: '획일', options: ['単一', '画一', '唯一', '均一'], correctAnswer: '画一' },
+            { question: 'ていあん', koreanMeaning: '제안', options: ['提案', '堤案', '題案', '是案'], correctAnswer: '提案' },
+            { question: 'そうおう', koreanMeaning: '상응', options: ['相応', '順応', '適応', '対応'], correctAnswer: '相応' },
+            { question: 'たいおう', koreanMeaning: '대응', options: ['対応', '相応', '適応', '順応'], correctAnswer: '対応' },
+            { question: 'おうせつ', koreanMeaning: '응접', options: ['応用', '応答', '応接', '応対'], correctAnswer: '応接' },
+            { question: 'おうよう', koreanMeaning: '응용', options: ['汎用', '応用', '応対', '応答'], correctAnswer: '応用' },
+            { question: 'てきおう', koreanMeaning: '적응', options: ['適当', '適用', '適格', '適応'], correctAnswer: '適応' },
+            { question: 'しんとう', koreanMeaning: '침투', options: ['涯透', '浸透', '津透', '潜透'], correctAnswer: '浸透' },
+            { question: 'ぎぞう', koreanMeaning: '위조', options: ['傍作', '偏造', '儀作', '偽造'], correctAnswer: '偽造' },
+            { question: 'べんしょう', koreanMeaning: '변상', options: ['弁俵', '弁償', '弁併', '弁偏'], correctAnswer: '弁償' },
+            { question: 'てつや', koreanMeaning: '철야', options: ['敏夜', '轍夜', '徹夜', '撤夜'], correctAnswer: '徹夜' },
+            { question: 'めつぼう', koreanMeaning: '멸망', options: ['滅亡', '漂亡', '漠亡', '没亡'], correctAnswer: '滅亡' },
+            { question: 'がっぺい', koreanMeaning: '합병', options: ['合堀', '合併', '活堀', '活併'], correctAnswer: '合併' },
+            { question: 'はんらん', koreanMeaning: '범람', options: ['反濫', '氾濫', '犯藍', '繁藍'], correctAnswer: '氾濫' },
+            { question: 'ぼっしゅう', koreanMeaning: '몰수', options: ['没収', '没集', '沈修', '沈拾'], correctAnswer: '没収' },
+            { question: 'へんけん', koreanMeaning: '편견', options: ['片研', '変観', '遍看', '偏見'], correctAnswer: '偏見' },
+            { question: 'ばっさい', koreanMeaning: '벌채', options: ['抜採', '伐採', '抜裁', '伐裁'], correctAnswer: '伐採' },
+            { question: 'ごえい', koreanMeaning: '호위', options: ['護衛', '護衡', '御偉', '御偉'], correctAnswer: '護衛' },
+            { question: 'ちょっけい', koreanMeaning: '직경', options: ['直佳', '直型', '直経', '直径'], correctAnswer: '直径' },
+            { question: 'ろうひ', koreanMeaning: '낭비', options: ['朗費', '漏費', '労費', '浪費'], correctAnswer: '浪費' },
+            { question: 'おくびょう', koreanMeaning: '겁이 많음', options: ['臆病', '億病', '憶病', '志病'], correctAnswer: '臆病' },
+            { question: 'びょうとう', koreanMeaning: '병동', options: ['病梢', '病棟', '病椅', '病栓'], correctAnswer: '病棟' },
+            { question: 'かいしゃく', koreanMeaning: '해석', options: ['介尺', '解尺', '介釈', '解釈'], correctAnswer: '解釈' },
+            { question: 'ばっすい', koreanMeaning: '발췌', options: ['抜粋', '抜粘', '伐粋', '伐粘'], correctAnswer: '抜粋' },
+            { question: 'きけん', koreanMeaning: '기권', options: ['棄権', '危権', '貴権', '箕権'], correctAnswer: '棄権' },
+            { question: 'ようちえん', koreanMeaning: '유치원', options: ['幻稀園', '幻稚園', '幼稀園', '幼稚園'], correctAnswer: '幼稚園' },
+            { question: 'がいよう', koreanMeaning: '개요', options: ['慢要', '慨要', '樹要', '概要'], correctAnswer: '概要' },
+            { question: 'さいばい', koreanMeaning: '재배', options: ['裁培', '栽培', '載培', '哉培'], correctAnswer: '栽培' },
+            { question: 'こきょう', koreanMeaning: '고향', options: ['故饗', '故卿', '故郷', '故響'], correctAnswer: '故郷' },
+            { question: 'ちんれつ', koreanMeaning: '진열', options: ['陳列', '陣列', '隊列', '陥列'], correctAnswer: '陳列' },
+            { question: 'くうらん', koreanMeaning: '공란', options: ['空槽', '空蘭', '空欄', '空椅'], correctAnswer: '空欄' },
+            { question: 'だっせん', koreanMeaning: '탈선', options: ['脱線', '腫線', '膜線', '膝線'], correctAnswer: '脱線' },
+            { question: 'あいさつ', koreanMeaning: '인사', options: ['挨拶', '拶挨', '撲拶', '拶撲'], correctAnswer: '挨拶' },
+            { question: 'とうじょう', koreanMeaning: '탑승', options: ['搭乗', '塔乗', '搭場', '塔場'], correctAnswer: '搭乗' },
+            { question: 'かくご', koreanMeaning: '각오', options: ['覚悟', '覚惜', '格悟', '格惜'], correctAnswer: '覚悟' },
+            { question: 'かつやく', koreanMeaning: '활약', options: ['活蹴', '活躍', '勝蹴', '勝躍'], correctAnswer: '活躍' },
+            { question: 'すいはんき', koreanMeaning: '밥솥', options: ['炊飯器', '煩飯器', '飯炊器', '飯煩器'], correctAnswer: '炊飯器' },
+            { question: 'しんちょう', koreanMeaning: '신중', options: ['懐重', '憤重', '慢重', '慎重'], correctAnswer: '慎重' },
+            { question: 'ゆうかい', koreanMeaning: '유괴', options: ['遊択', '誘択', '遊拐', '誘拐'], correctAnswer: '誘拐' },
+            { question: 'ついらく', koreanMeaning: '추락', options: ['塾落', '墜落', '墨楽', '墓楽'], correctAnswer: '墜落' },
+            { question: 'かだん', koreanMeaning: '화단', options: ['花壇', '花塀', '華壇', '華塀'], correctAnswer: '花壇' },
+            { question: 'しき', koreanMeaning: '지휘', options: ['指撫', '指揮', '指括', '指挿'], correctAnswer: '指揮' },
+            { question: 'こうじょ', koreanMeaning: '공제', options: ['抗徐', '括徐', '掛除', '控除'], correctAnswer: '控除' },
+            { question: 'ばいよう', koreanMeaning: '매양', options: ['媒養', '陪養', '培養', '栽養'], correctAnswer: '媒養' },
+
+        ];
+
+        const kanjiQuizDataC = [
+            { question: 'この映画は画期的な手法で製作された。', koreanMeaning: '', options: ['広く知られている', '最近ではめずらしい', '非常に時間がかかる', '今までになく新しい'], correctAnswer: '今までになく新しい' },
+            { question: 'あの企業は海外市場への進出をもくろんでいる。', koreanMeaning: '', options: ['計画して', '果たして', '開始して', 'あきらめて'], correctAnswer: '計画して' },
+            { question: '問題を解決するために、もう少し手がかりが欲しい。', koreanMeaning: '', options: ['イメージ', 'サポート', 'チャンス', 'ヒント'], correctAnswer: 'ヒント' },
+            { question: 'あの人の話はにわかには信じられない。', koreanMeaning: '', options: ['すぐには', '完全には', 'すなおには', '簡単には'], correctAnswer: 'すぐには' },
+            { question: 'この鍋は重宝している。', koreanMeaning: '', options: ['以前より値上がりしている', '形が気に入っている', '評価が高まっている', '便利で役に立っている'], correctAnswer: '便利で役に立っている' },
+            { question: '中村さんは仕事に対していつもシビアだ。', koreanMeaning: '', options: ['弱気だ', '厳しい', '柔軟だ', '注意深い'], correctAnswer: '厳しい' },
+
+        ];
+
+        const kanjiQuizDataD = [
+            { question: '閑静', koreanMeaning: '한정', options: ['そのレストランは繁華街から外れた閑静な場所にある。', '今日は朝から具合が悪かったので、会社を休んで家で閑静にしていた。', '用事が早く済み、閑静な時間ができたので、映画を見に行くことにした。', '日中はにぎやかな公園だが、夜になると急に閑静になる。'], correctAnswer: 'そのレストランは繁華街から外れた閑静な場所にある。' },
+            { question: 'たやすい', koreanMeaning: '쉬운', options: ['弟は寝坊したらしく、たやすい物だけ食べて、慌てて出かけていった。', '伊藤氏とは大学時代からの親友で、本音が言えるたやすい関係だ。', 'せっかくの日曜日だから、ゆっくり休んでたやすく過ごそうと思う。', 'この問題は想像以上に複雑で、たやすく解決できるものではなかった。'], correctAnswer: '伊藤氏とは大学時代からの親友で、本音が言えるたやすい関係だ。' },
+            { question: '察する', koreanMeaning: '살필', options: ['医師たちはチームを組み、意見を出し合って、最良の治療法を察した。', '気象予報士はテレビの天気予報で、来週の気温の変化を察し始めた。', '鈴木さんは、私が何も言わなくても、私の気持ちを察して慰めてくれた。', '外を歩いていたら急にいいアイディアを察したので、手帳にメモをした。'], correctAnswer: '鈴木さんは、私が何も言わなくても、私の気持ちを察して慰めてくれた。' },
+            { question: '内訳', koreanMeaning: '내역', options: ['来週の内訳を確認したが、予定がないのは木曜の夜だけだ。', '前回の出張費の内訳を見たら、交通費の割合が予想外に高かった。', '司会者は進行を間違えないように、式の内訳を何度も見直した。', '家族の健康のため、栄養の内訳を考えて食事を作っている。'], correctAnswer: '前回の出張費の内訳を見たら、交通費の割合が予想外に高かった。' },
+            { question: '食い違う', koreanMeaning: '불일치', options: ['この事件は、複数の目撃者の話がそれぞれ食い違っており、不明な点が多い。', '金庫を開けようと思ったが、どの鍵も食い違って開けられなかった。', '何だか歩きにくいと思ったら、サンダルの左右が食い違っていた。', '調味料を変えたのか、この料理はいつもと味が食い違っているように感じる。'], correctAnswer: 'この事件は、複数の目撃者の話がそれぞれ食い違っており、不明な点が多い。' },
+            { question: '過密', koreanMeaning: '과밀', options: ['雑誌で紹介されてから、この商品への過密な注文が続いているらしい。', '水質汚染に関して人々の抗議が過密になり、政府は対策を迫られている。', '今回の出張は過密なスケジュールで、ゆっくり食事する時間もなさそうだ。', '春になると、この池の周りには、色とりどりの花が過密に咲き乱れる。'], correctAnswer: '雑誌で紹介されてから、この商品への過密な注文が続いているらしい。' },
+
+        ];
+
+    </script>
+
+
+    <script src="./script.js"></script>
+
+
+</body>
+
+</html>

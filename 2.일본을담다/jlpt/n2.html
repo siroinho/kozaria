@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어공부 KOJARIA</title>
+    <link rel="stylesheet" href="./n1.css">
+<body class="jp">
+
+    <header>
+        <div class="container">
+            <h1>
+                <button><a href="../index.html">KOJARIA</a></button>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./n1.html"><button>JLPT N1</button></a>
+                    </li>
+                    <li>
+                        <a href="./n2.html"><button>JLPT N2</button></a>
+                    </li>
+                    <li>
+                        <a href="./n3.html"><button>JLPT N3</button></a>
+                    </li>
+                    <li>
+                        <a href="./n4.html"><button>JLPT N4</button></a>
+                    </li>
+                    <li>
+                        <a href="./n5.html"><button>JLPT N5</button></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+<div class="outer">
+
+    <main id="main_a" class="wrap inner">
+        <div class="title-header">
+            <div class="title-heading">
+                <span class="aside">n2 한자읽기 문제</span>
+            </div>
+            <div class="category">
+                    <select class="question-number-a" onchange="changeSelect(this)"></select>
+                <div class="category-a">
+                    <p class="total-question" id="totalQuestionA">총문제 문제</p>
+                    <p class="remaining-question" id="remainingQuestionA">남은문제 문제</p>                   
+                    <button class="show-meaning-button" onclick="showMeaning('A')">뜻 보기</button>
+                    <button class="hide-meaning-button" onclick="hideMeaning('A')">뜻 숨기기</button>
+                    <p class="korean-meaning"></p>
+                    <p class="question"></p>
+                    <ul class="options">
+                    <!-- 선택지가 표시됩니다. -->
+                    </ul>
+
+                    <div class="slide_btn_box">
+                        <button type="button" class="slide_btn_prev">이전문제</button>
+                        <button type="button" class="result-btn-a" onclick="showTotalResulta()">결과보기</button>                       
+                        <button type="button" class="slide_btn_next">다음문제</button>
+                    </div>    
+                </div>
+
+                <div class="button-container">
+                <button type="button" class="goBackBtn_a" onclick="goBackToQuiza()" style="display: none;">문제풀기</button>
+                <button type="button" class="resetBtn_a" onclick="resetAnswersa()" style="display: none;">답안초기화</button>
+                </div>
+        
+                <div id="result-container_a">
+                    <div id="user-answer_a" class="result-item scroll-box">
+                        <p></p>
+                    </div>
+                    <div id="correct-answer_a" class="result-item">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main id="main_b" class="wrap inner">
+        <div class="title-header">
+            <div class="title-heading">
+                <span class="aside">n2 문맥규정 문제</span>
+            </div>
+            <div class="category">
+                <select class="question-number-b" onchange="changeSelect(this)"></select>
+                <div class="category-b">
+                    <p class="total-question" id="totalQuestionB">총문제 문제</p>
+                    <p class="remaining-question" id="remainingQuestionB">남은문제 문제</p>    
+                    <button class="show-meaning-button" onclick="showMeaning('B')">뜻 보기</button>
+                    <button class="hide-meaning-button" onclick="hideMeaning('B')">뜻 숨기기</button>
+                    <p class="korean-meaningb"></p>
+                    <p class="questionb"></p>
+                    <ul class="optionsb">
+                    <!-- 선택지가 표시됩니다. -->
+                </ul>
+                <div class="slide_btn_box">
+                    <button type="button" class="slide_btn_prev">이전문제</button>
+                    <button type="button" class="result-btn-b" onclick="showTotalResultb()">결과보기</button>                       
+                    <button type="button" class="slide_btn_next">다음문제</button>
+                </div>    
+                </div>
+
+                <div class="button-container">
+                <button type="button" class="goBackBtn_b" onclick="goBackToQuizb()" style="display: none;">문제풀기</button>
+                <button type="button" class="resetBtn_b" onclick="resetAnswersb()" style="display: none;">답안초기화</button>
+                </div>
+            
+                <div id="result-container_b">
+                    <div id="user-answer_b"  class="result-item scroll-box">
+                        <p></p>
+                    </div>
+                    <div id="correct-answer_b" class="result-item">
+                        <p></p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </main>
+    <main id="main_c" class="wrap inner">
+        <div class="title-header">
+            <div class="title-heading">
+                <span class="aside">n2 유의어 문제</span>
+            </div>
+            <div class="category">
+                <select class="question-number-c" onchange="changeSelect(this)"></select>
+                <div class="category-c">
+                    <p class="total-question" id="totalQuestionC">총문제 문제</p>
+                    <p class="remaining-question" id="remainingQuestionC">남은문제 문제</p>            
+                    <button class="show-meaning-button" onclick="showMeaning('C')">뜻 보기</button>
+                    <button class="hide-meaning-button" onclick="hideMeaning('C')">뜻 숨기기</button>
+                    <p class="korean-meaningc"></p>
+                    <p class="questionc"></p>
+                    <ul class="optionsc">
+                    <!-- 선택지가 표시됩니다. -->
+                </ul>
+                <div class="slide_btn_box">
+                    <button type="button" class="slide_btn_prev">이전문제</button>
+                    <button type="button" class="result-btn-c" onclick="showTotalResultc()">결과보기</button>                       
+                    <button type="button" class="slide_btn_next">다음문제</button>
+                </div>    
+                </div>
+
+                <div class="button-container">
+                <button type="button" class="goBackBtn_c" onclick="goBackToQuizc()" style="display: none;">문제풀기</button>
+                <button type="button" class="resetBtn_c" onclick="resetAnswersc()" style="display: none;">답안초기화</button>
+                </div>
+            
+                <div id="result-container_c">
+                    <div id="user-answer_c"  class="result-item scroll-box">
+                        <p></p>
+                    </div>
+                    <div id="correct-answer_c" class="result-item">
+                        <p></p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </main>
+    <main id="main_d" class="wrap inner">
+        <div class="title-header">
+            <div class="title-heading">
+                <span class="aside">n2 용법 문제</span>
+            </div>
+            <div class="category">
+                <select class="question-number-d" onchange="changeSelect(this)"></select>
+                <div class="category-d">
+                    <p class="total-question" id="totalQuestionD">총문제 문제</p>
+                    <p class="remaining-question" id="remainingQuestionD">남은문제 문제</p>    
+                    <button class="show-meaning-button" onclick="showMeaning('D')">뜻 보기</button>
+                    <button class="hide-meaning-button" onclick="hideMeaning('D')">뜻 숨기기</button>
+                    <p class="korean-meaningd"></p>
+                    <p class="questiond"></p>
+                    <ul class="optionsd">
+                    <!-- 선택지가 표시됩니다. -->
+                </ul>
+                <div class="slide_btn_box">
+                    <button type="button" class="slide_btn_prev">이전문제</button>
+                    <button type="button" class="result-btn-d" onclick="showTotalResultd()">결과보기</button>                       
+                    <button type="button" class="slide_btn_next">다음문제</button>
+                </div>    
+                </div>
+
+                <div class="button-container">
+                <button type="button" class="goBackBtn_d" onclick="goBackToQuizd()" style="display: none;">문제풀기</button>
+                <button type="button" class="resetBtn_d" onclick="resetAnswersd()" style="display: none;">답안초기화</button>
+                </div>
+            
+                <div id="result-container_d">
+                    <div id="user-answer_d"  class="result-item scroll-box">
+                        <p></p>
+                    </div>
+                    <div id="correct-answer_d" class="result-item">
+                        <p></p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </main>
+    
+    <div class="button-list">
+        <button class="button-left">←</button>
+        <button class="button-right">→</button>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+
+    const kanjiQuizDataA = [
+    { question: '収穫', koreanMeaning: '수확', options: ['しゅうかく', 'しゅうとく', 'しゅうしゅう', 'しゅうがく'], correctAnswer: 'しゅうかく' },
+{ question: '新鮮', koreanMeaning: '신선', options: ['しんかん', 'しんちょう', 'しんせん', 'しんそん'], correctAnswer: 'しんせん' },
+{ question: '農家', koreanMeaning: '농가', options: ['のうや', 'のうか', 'のういえ', 'のうけ'], correctAnswer: 'のうか' },
+{ question: '直接', koreanMeaning: '직접', options: ['ちょっせつ', 'ちょうせつ', 'ちょくせつ', 'ちょせつ'], correctAnswer: 'ちょくせつ' },
+{ question: '自宅', koreanMeaning: '자택', options: ['じっか', 'じゅうたく', 'じったく', 'じたく'], correctAnswer: 'じたく' },
+{ question: '配達', koreanMeaning: '배달', options: ['はいたつ', 'ばいたつ', 'はいだる', 'ばいだる'], correctAnswer: 'はいたつ' },
+{ question: '留学', koreanMeaning: '유학', options: ['るがく', 'るうがく', 'りゅうがく', 'ゆうがく'], correctAnswer: 'りゅうがく' },
+{ question: '寮', koreanMeaning: '기숙사', options: ['りょう', 'そう', 'ちょう', 'ろう'], correctAnswer: 'りょう' },
+{ question: '集団', koreanMeaning: '집단', options: ['しゅたん', 'しゅだん', 'しゅうたん', 'しゅうだん'], correctAnswer: 'しゅうだん' },
+{ question: '経験', koreanMeaning: '경험', options: ['きょうけん', 'けいけん', 'けけん', 'けんけん'], correctAnswer: 'けいけん' },
+{ question: '紅葉', koreanMeaning: '단풍잎', options: ['もよう', 'こうみじ', 'こうよう', 'こうば'], correctAnswer: 'こうよう' },
+{ question: '時期', koreanMeaning: '시기', options: ['つき', 'とき', 'しき', 'じき'], correctAnswer: 'じき' },
+{ question: '登山', koreanMeaning: '등산', options: ['とうさん', 'とうぜん', 'とさん', 'とざん'], correctAnswer: 'とざん' },
+{ question: '景色', koreanMeaning: '경치', options: ['けいしょく', 'けいしき', 'けいろ', 'けしき'], correctAnswer: 'けしき' },
+{ question: '挨拶', koreanMeaning: '인사', options: ['えんかい', 'がまん', 'あいさつ', 'けいやく'], correctAnswer: 'あいさつ' },
+{ question: '目下', koreanMeaning: '목하', options: ['もっか', 'めっか', 'めした', 'めもと'], correctAnswer: 'めした' },
+{ question: '握手', koreanMeaning: '악수', options: ['かって', 'にゅうしゅ', 'はくしゅ', 'あくしゅ'], correctAnswer: 'あくしゅ' },
+{ question: '求める', koreanMeaning: '구하다', options: ['もとめる', 'はじめる', 'ゆるめる', 'きめる'], correctAnswer: 'もとめる' },
+{ question: '大統領', koreanMeaning: '대통령', options: ['だいとんりょう', 'だいとうりょう', 'だいどりょう', 'だいどうれい'], correctAnswer: 'だいとうりょう' },
+{ question: '景気', koreanMeaning: '경기', options: ['けいき', 'きょうき', 'けっき', 'けき'], correctAnswer: 'けいき' },
+{ question: '対策', koreanMeaning: '대책', options: ['たいしょ', 'たいしょう', 'たいさく', 'たいせい'], correctAnswer: 'たいさく' },
+{ question: '医療', koreanMeaning: '의료', options: ['いしゃ', 'いりゅう', 'ちりょう', 'いりょう'], correctAnswer: 'いりょう' },
+{ question: '発展', koreanMeaning: '발전', options: ['はつてん', 'はつたつ', 'はってん', 'はったつ'], correctAnswer: 'はってん' },
+{ question: '重視', koreanMeaning: '중시', options: ['りょうし', 'しゅちょう', 'じゅうし', 'はっぴょう'], correctAnswer: 'じゅうし' },
+{ question: '大勢', koreanMeaning: '대세', options: ['おおぜい', 'たいせい', 'おおせい', 'だいせい'], correctAnswer: 'おおぜい' },
+{ question: '尊重', koreanMeaning: '존중', options: ['そんじゅう', 'そんちょう', 'けいじゅう', 'けいちょう'], correctAnswer: 'そんちょう' },
+{ question: '補足', koreanMeaning: '보충', options: ['ほそく', 'ふぞく', 'ふそく', 'ぼそく'], correctAnswer: 'ほそく' },
+{ question: '環境', koreanMeaning: '환경', options: ['かんきゅう', 'かんきょう', 'けんきゅう', 'けんきょう'], correctAnswer: 'かんきょう' },
+{ question: '括弧', koreanMeaning: '괄호', options: ['かっこ', 'かついん', 'かっこう', 'かっし'], correctAnswer: 'かっこ' },
+{ question: '括弧', koreanMeaning: '삭제', options: ['しょうじょう', 'さくじょ', 'さくじょう', 'しょうじょ'], correctAnswer: 'さくじょ' },
+{ question: '資料', koreanMeaning: '자료', options: ['しょるい', 'かりょう', 'しか', 'しりょう'], correctAnswer: 'しりょう' },
+{ question: '速達', koreanMeaning: '속달', options: ['そったつ', 'はやたち', 'はやだち', 'そくたつ'], correctAnswer: 'そくたつ' },
+{ question: '郵送', koreanMeaning: '우송', options: ['ゆうそう', 'ゆうそ', 'ゆそう', 'ゆぞう'], correctAnswer: 'ゆうそう' },
+{ question: '横断', koreanMeaning: '횡단', options: ['おうたん', 'おうだん', 'よこたち', 'よこだち'], correctAnswer: 'おうだん' },
+{ question: '歩道橋', koreanMeaning: '육교', options: ['ほどうばし', 'ほどうきょう', 'さんどうばし', 'さんどうきょう'], correctAnswer: 'ほどうきょう' },
+{ question: '乾燥', koreanMeaning: '건조', options: ['ちょうそう', 'かんそ', 'ちょうそ', 'かんそう'], correctAnswer: 'かんそう' },
+{ question: '車輪', koreanMeaning: '차륜', options: ['しゃりん', 'しゃわ', 'くるまわ', 'しゃろん'], correctAnswer: 'しゃりん' },
+{ question: '消毒', koreanMeaning: '소독', options: ['けしどく', 'きょどく', 'しょどく', 'しょうどく'], correctAnswer: 'しょうどく' },
+
+    ];
+    
+    const kanjiQuizDataB = [
+    { question: 'よほう', koreanMeaning: '예보', options: ['予報', '予放', '予想', '余報'], correctAnswer: '予報' },
+{ question: 'はっけん', koreanMeaning: '발견', options: ['発件', '発見', '発券', '発検'], correctAnswer: '発見' },
+{ question: 'ふちゅうい', koreanMeaning: '부주의', options: ['非注意', '無注意', '否注意', '不注意'], correctAnswer: '不注意' },
+{ question: 'かいけつ', koreanMeaning: '해결', options: ['解決', '会決', '快決', '解結'], correctAnswer: '解決' },
+{ question: 'ちがう', koreanMeaning: '아니', options: ['緯う', '遺う', '違う', '偉う'], correctAnswer: '違う' },
+{ question: 'えいせいほうそう', koreanMeaning: '위성 방송', options: ['衛星放送', '衛星奉送', '衛生包装', '衛生放送'], correctAnswer: '衛星放送' },
+{ question: 'じこ', koreanMeaning: '자기', options: ['自己', '事姑', '事故', '事個'], correctAnswer: '自己' },
+{ question: 'もんだい', koreanMeaning: '문제', options: ['問題', '悶題', '聞題', '門題'], correctAnswer: '問題' },
+{ question: 'このみ', koreanMeaning: '취향', options: ['木の実', '好み', '個の味', '子の見'], correctAnswer: '好み' },
+{ question: 'ふしまつ', koreanMeaning: '불미스러운 일', options: ['不失末', '不始末', '不島津', '不始待'], correctAnswer: '不始末' },
+
+    ];
+    
+    const kanjiQuizDataC = [
+    { question: '彼は、誰にでも優しくて、（ユーモアもある）ので、人気がある。', koreanMeaning: '그는 누구에게나 상냥하고 (유머도 있다) 그래서 인기가 있다.', options: ['親切な', '面白い', '金持ちな', '知識がある'], correctAnswer: '面白い' },
+{ question: '私は（何が何でも）、今度の試験に合格したい。', koreanMeaning: '나는 (무슨일이 있어도), 이번 시험에 합격하고 싶어', options: ['どんな理由でも', 'どんな時でも', 'どんな試験でも', 'どんなことをしても'], correctAnswer: 'どんなことをしても' },
+{ question: '今回のテスト、（甘くみて）失敗した。かなり、難しい。しかも点数が悪いと再試があるそうだ。', koreanMeaning: '이번 테스트, (만만하게 봐서) 실패했다. 꽤 어렵다.게다가 점수가 나쁘면 재시험이 있다고 한다.', options: ['よく確かめないで', 'いつもと同じで', '簡単だと考えて', '時間を守らなくて'], correctAnswer: '簡単だと考えて' },
+{ question: '彼女は（そそっかしくて）、よく仕事を間違える。', koreanMeaning: '그녀는 (거들먹거려서) 자주 일을 그르친다.', options: ['のんびりしていて', '注意が足りなくて', '能力がなくて', '怠け者で'], correctAnswer: '注意が足りなくて' },
+{ question: '彼女は日本に来て（一段と）日本語が上手になった。', koreanMeaning: '그녀는 일본에 와서 (한층) 일본어가 능숙해졌다.', options: ['わずかながら', '少しずつ', '前よりもっと', '突然'], correctAnswer: '前よりもっと' },
+{ question: '子どもは　（てっぺんに）旗が立っている山の絵をかいた。', koreanMeaning: '아이는 (꼭대기에) 깃발이 서 있는 산의 그림을 그렸다.', options: ['中腹', '頂上', 'すその', 'ふもと'], correctAnswer: '頂上' },
+{ question: '彼は（話がわかる）上司として、部下に人気がある。', koreanMeaning: '그는 (말이 통하는) 상사로서 부하에게 인기가 있다.', options: ['部下が理解できる', '話をよく聞く', '語学が得意な', '部下と話をする'], correctAnswer: '部下が理解できる' },
+{ question: 'パーティーに誘われたが、（気が進まない）。', koreanMeaning: '파티에 초대받았지만 (내키지 않는다).', options: ['とても心配だ', 'いやな気持ちだ', '行きたくない', '腹が立った'], correctAnswer: '行きたくない' },
+{ question: '今日は金曜日だから、早く仕事を（あげて）おいしいものでも食べに行こうよ。', koreanMeaning: '오늘은 금요일이니까, 빨리 일을(주고) 맛있는 것이라도 먹으러 가자.', options: ['終了させて', '見つけて', '能力を出して', '十分に行って'], correctAnswer: '終了させて' },
+{ question: 'その舞台はとてもすばらしく、舞台を見るために東京まで来た（甲斐があった）と感じた。', koreanMeaning: '그 무대는 매우 훌륭하고, 무대를 보기 위해 도쿄까지 온 (보람이 있었다)고 느꼈다.', options: ['時間が無駄だった', 'お金が高かった', '価値があった', '時間が必要だった'], correctAnswer: '価値があった' },
+    
+    ];
+    
+    const kanjiQuizDataD = [
+    { question: '彼は、誰にでも優しくて、（ユーモアもある）ので、人気がある。', koreanMeaning: '그는 누구에게나 상냥하고 (유머도 있다) 그래서 인기가 있다.', options: ['親切な', '面白い', '金持ちな', '知識がある'], correctAnswer: '面白い' },
+{ question: '私は（何が何でも）、今度の試験に合格したい。', koreanMeaning: '나는 (무슨일이 있어도), 이번 시험에 합격하고 싶어', options: ['どんな理由でも', 'どんな時でも', 'どんな試験でも', 'どんなことをしても'], correctAnswer: 'どんなことをしても' },
+{ question: '今回のテスト、（甘くみて）失敗した。かなり、難しい。しかも点数が悪いと再試があるそうだ。', koreanMeaning: '이번 테스트, (만만하게 봐서) 실패했다. 꽤 어렵다.게다가 점수가 나쁘면 재시험이 있다고 한다.', options: ['よく確かめないで', 'いつもと同じで', '簡単だと考えて', '時間を守らなくて'], correctAnswer: '簡単だと考えて' },
+{ question: '彼女は（そそっかしくて）、よく仕事を間違える。', koreanMeaning: '그녀는 (거들먹거려서) 자주 일을 그르친다.', options: ['のんびりしていて', '注意が足りなくて', '能力がなくて', '怠け者で'], correctAnswer: '注意が足りなくて' },
+{ question: '彼女は日本に来て（一段と）日本語が上手になった。', koreanMeaning: '그녀는 일본에 와서 (한층) 일본어가 능숙해졌다.', options: ['わずかながら', '少しずつ', '前よりもっと', '突然'], correctAnswer: '前よりもっと' },
+{ question: '子どもは　（てっぺんに）旗が立っている山の絵をかいた。', koreanMeaning: '아이는 (꼭대기에) 깃발이 서 있는 산의 그림을 그렸다.', options: ['中腹', '頂上', 'すその', 'ふもと'], correctAnswer: '頂上' },
+{ question: '彼は（話がわかる）上司として、部下に人気がある。', koreanMeaning: '그는 (말이 통하는) 상사로서 부하에게 인기가 있다.', options: ['部下が理解できる', '話をよく聞く', '語学が得意な', '部下と話をする'], correctAnswer: '部下が理解できる' },
+{ question: 'パーティーに誘われたが、（気が進まない）。', koreanMeaning: '파티에 초대받았지만 (내키지 않는다).', options: ['とても心配だ', 'いやな気持ちだ', '行きたくない', '腹が立った'], correctAnswer: '行きたくない' },
+{ question: '今日は金曜日だから、早く仕事を（あげて）おいしいものでも食べに行こうよ。', koreanMeaning: '오늘은 금요일이니까, 빨리 일을(주고) 맛있는 것이라도 먹으러 가자.', options: ['終了させて', '見つけて', '能力を出して', '十分に行って'], correctAnswer: '終了させて' },
+{ question: 'その舞台はとてもすばらしく、舞台を見るために東京まで来た（甲斐があった）と感じた。', koreanMeaning: '그 무대는 매우 훌륭하고, 무대를 보기 위해 도쿄까지 온 (보람이 있었다)고 느꼈다.', options: ['時間が無駄だった', 'お金が高かった', '価値があった', '時間が必要だった'], correctAnswer: '価値があった' },
+  
+    ];
+    
+    
+    
+    
+    
+    
+</script>
+
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>

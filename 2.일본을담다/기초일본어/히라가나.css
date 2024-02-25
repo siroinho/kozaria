@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+.jp{
+font-family: 'Noto Sans JP', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+.container{
+    margin: 0 auto;
+}
+
+header{
+    top: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+header .container{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: white;
+}
+header button a{
+    color: #FFF;
+    text-decoration: none;
+}
+header h1 button{
+    font-size: 2rem;
+    font-weight: bold ;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li{
+    padding:10px;
+}
+header nav ul li button{
+    font-size: 0.8rem;
+}
+
+
+.hiragana-container {
+    width: 70%;
+    height: 500px;
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+}
+.hiragana-section h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+
+.hiragana-wrapper table {
+    border-collapse: collapse;
+}
+
+.hiragana-wrapper th, .hiragana-wrapper td {
+    border: 2px solid #ddd;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.hiragana-wrapper td:first-child,
+.dan {
+    font-weight: bold;
+}

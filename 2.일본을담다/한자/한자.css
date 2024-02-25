@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+.jp{
+font-family: 'Noto Sans JP', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+.container{
+    margin: 0 auto;
+}
+
+header{
+    top: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 0;
+    position: fixed;
+}
+header .container{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: white;
+}
+header button a{
+    color: #FFF;
+    text-decoration: none;
+}
+header h1 button{
+    font-size: 2rem;
+    font-weight: bold ;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li{
+    padding:10px;
+}
+header nav ul li button{
+    font-size: 0.8rem;
+}
+
+
+
+
+
+.container {
+    width: 70%;
+}
+.container h2{
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
+#wordTable th,
+#wordTable td {
+    width: 20%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+#wordTable th {
+    background-color: #fff;
+    position: sticky;
+    top: 58px;
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+tbody {
+    height: 600px;
+    overflow-y: auto;
+}
+#wordTable tbody td {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.character {
+    font-size: 30px;
+}
+
+
+        /* 버튼 중앙 정렬 */
+        #pagination {
+            text-align: center;
+        }
+        #pagination button {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+         /* 현재 페이지 버튼 스타일 */
+        #pagination button.current {
+            background-color: #FFA500; /* 현재 페이지 버튼 배경색 */
+        }
+
+        /* 페이드 인/아웃 애니메이션 적용 */
+        #wordTable tbody tr {
+            animation: fade 0.5s ease;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }

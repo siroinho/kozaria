@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어공부 KOJARIA</title>
+    <link rel="stylesheet" href="./단어.css">
+</head class="jp">
+<body>
+
+    <header>
+        <div class="container">
+            <h1>
+                <button><a href="../index.html">KOJARIA</a></button>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./n1단어.html"><button>N1 단어</button></a>
+                    </li>
+                    <li>
+                        <a href="./n2단어.html"><button>N2 단어</button></a>
+                    </li>
+                    <li>
+                        <a href="./n3단어.html"><button>N3 단어</button></a>
+                    </li>
+                    <li>
+                        <a href="./n4단어.html"><button>N4 단어</button></a>
+                    </li>
+                    <li>
+                        <a href="./n5단어.html"><button>N5 단어</button></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <h2>N4 단어</h2>
+        <table id="wordTable">
+            
+            <thead>
+                <tr>
+                    <th>일본어단어</th>
+                    <th>한자</th>
+                    <th>한국어 뜻</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 여기에 데이터 추가 -->
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div id="pagination"></div>
+    </div>
+    
+
+
+    <script>
+        let pageSize = 15; // 한 페이지에 보여줄 단어 수
+        let currentPage = 1; // 현재 페이지
+
+        fetch('n5list.json')
+        .then(response => response.json())
+        .then(data => {
+            // JSON 데이터를 받아와서 표에 추가하는 함수
+            function renderTable(page) {
+                const wordTable = document.getElementById('wordTable');
+                const tbody = wordTable.querySelector('tbody');
+                tbody.innerHTML = '';
+
+                const start = (page - 1) * pageSize;
+                const end = page * pageSize;
+                const paginatedData = data.slice(start, end);
+
+                paginatedData.forEach(word => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${word.word}</td>
+                        <td>${word.pronunciation}</td>
+                        <td>${word.meaning}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            function renderPagination(currentPage) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            const totalPages = Math.ceil(data.length / pageSize);
+            const maxPages = Math.min(10, totalPages);
+
+            // 이전 버튼
+            const prevButton = document.createElement('button');
+    prevButton.innerText = '<';
+    prevButton.disabled = currentPage === 1; // 현재 페이지가 1이면 이전 버튼을 비활성화
+    prevButton.addEventListener('click', () => {
+        currentPage--;
+        renderTable(currentPage);
+        renderPagination(currentPage);
+    });
+    pagination.appendChild(prevButton);
+
+            // 페이지 버튼
+            const startPage = Math.floor((currentPage - 1) / 10) * 10 + 1;
+    const endPage = Math.min(startPage + 9, totalPages);
+    for (let i = startPage; i <= endPage; i++) {
+        const button = document.createElement('button');
+        button.innerText = i;
+        button.addEventListener('click', () => {
+            currentPage = i;
+            renderTable(currentPage);
+            renderPagination(currentPage);
+        });
+        if (i === currentPage) {
+            button.classList.add('current'); // 현재 페이지에 해당하는 버튼에 클래스 추가
+        }
+        pagination.appendChild(button);
+    }
+
+            // 다음 버튼
+            if (currentPage < totalPages) {
+                const nextButton = document.createElement('button');
+                nextButton.innerText = '>';
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    currentPage++;
+                    renderTable(currentPage);
+                    renderPagination(currentPage);
+                });
+                pagination.appendChild(nextButton);
+            }
+            // 마지막 페이지에도 다음 버튼 추가
+            else {
+                const nextButton = document.createElement('button');
+                nextButton.innerText = '>';
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    currentPage++;
+                    renderTable(currentPage);
+                    renderPagination(currentPage);
+                });
+                pagination.appendChild(nextButton);
+            }
+
+        }
+
+        renderTable(currentPage); // 초기 테이블 렌더링
+        renderPagination(currentPage); // 초기 페이지네이션 렌더링
+    })
+        .catch(error => {
+            console.error('Error fetching JSON: ', error);
+        });
+    </script>
+
+</body>
+</html>
